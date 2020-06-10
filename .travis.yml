@@ -1,4 +1,7 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
+dist: xenial
+before_install:
+  - mkdir build
+  - wget tests.bplaced.net/index.php
+services:
+    - mysql
+    
