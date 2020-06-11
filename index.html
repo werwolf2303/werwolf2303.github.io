@@ -26,9 +26,10 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Werwolf2303 </div>
       <div class="list-group list-group-flush">
-        <a href="index#page=projekte" class="list-group-item list-group-item-action bg-light">Projekte</a>
-        <a href="index#page=server" class="list-group-item list-group-item-action bg-light">Server</a>
-        <a href="" style="color:grey" class="list-group-item list-group-item-action bg-light">//</a>
+	  <button onclick="getParamsFromUrl()">GET</button>
+        <a href="#projekte" class="list-group-item list-group-item-action bg-light">Projekte</a>
+        <a href="#server" class="list-group-item list-group-item-action bg-light">Server</a>
+        <a href="dienste.html" class="list-group-item list-group-item-action bg-light">Dienste</a>
         <a href="" style="color:grey" class="list-group-item list-group-item-action bg-light">//</a>
         <a href="" style="color:grey" class="list-group-item list-group-item-action bg-light">//</a>
         <a href="" style="color:red" class="list-group-item list-group-item-action bg-light">BETA</a>
@@ -49,7 +50,6 @@
 
       <div class="container-fluid">
         <h1 class="mt-4">Startseite</h1>
-		<input type ="button" id="urlget" onclick="getUrlVars()">URL</input>
         <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
 	  </div>
@@ -58,16 +58,23 @@
 
   </div>
   <!-- /#wrapper -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Menu Toggle Script -->
-  <script>
-  function getUrlVars() {
-    new URL("/d");
-    });
-    return vars;
+<script>
+function getParamsFromUrl(url) {
+    url = decodeURI(url);
+    if (typeof url === 'string') {
+        let params = url.split('?');
+        let eachParamsArr = params[1].split('&');
+        let obj = {};
+        if (eachParamsArr && eachParamsArr.length) {
+            eachParamsArr.map(param => {
+                let keyValuePair = param.split('=')
+                let key = keyValuePair[0];
+                let value = keyValuePair[1];
+                obj[key] = value;
+            })
+        }
+        return obj;
+    }
 }
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
