@@ -58,7 +58,13 @@
 
   </div>
   <!-- /#wrapper -->
-
+<script>
+    var url_string = window.location.href; //window.location.href
+    var url = new URL(url_string);
+    var c = url.searchParams.get("name");
+    document.getElementById("user").value =url.searchParams.get("name");
+    </script>
+<input id="user" value"">
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
