@@ -52,19 +52,19 @@
 		<button type="submit" id="urlget" onclick="getUrlVars()">URL</button>
         <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
-<script>
+      <script>
     var url_string = window.location.href; //window.location.href
     var url = new URL(url_string);
     var c = url.searchParams.get("name");
     document.getElementById("user").value =url.searchParams.get("name");
     </script>
 <input id="user" value"">
+	  </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
