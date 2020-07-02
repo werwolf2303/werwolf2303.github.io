@@ -35,14 +35,29 @@ jobs:
     - name: SpotDL
       run:
         spotdl --song https://open.spotify.com/track/76nqCfJOcFFWBJN32PAksn?si=b4mUan6qTbmtCGx81UdvAQ
-    - name: Upload
+    - name: Upload1
       run: |
         git config --global user.name "WorkFlow"
+    - name: Upload2
+      run: |
         git config  user.email "gianlucabeil@outlook.de"
+    - name: Upload3
+      run: |
         git config user.name "gianlucabeil@outlook.de"
+    - name: Upload4
+      run: |
         git init
-        git add "Ava Max - Kings & Queens.opus"
+    - name: Upload5
+      run: |
+         git add "Ava Max - Kings & Queens.opus"
+    - name: Upload6
+      run: |
         git push -u origin master
+        
+       
+        
+        
+        
         
 
 
