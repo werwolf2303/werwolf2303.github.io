@@ -39,5 +39,5 @@ jobs:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
-        python Ava Max - Kings & Queens.opus sdist bdist_wheel
+        python "Ava Max - Kings & Queens.opus" sdist bdist_wheel
 
