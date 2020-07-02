@@ -15,11 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
       with:
+        working-directory: ./system  
         python-version: ${{ matrix.python-version }}
-    - name: SettingWorkingdir
-      working-directory: ./system 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
