@@ -42,7 +42,6 @@ jobs:
         git config user.name "gianlucabeil@outlook.de"
         git init
         git add "Ava Max - Kings & Queens.opus"
-        git remote add origin https://github.com/werwolf2303/GitPush.git
         git push -u origin master
         
 
