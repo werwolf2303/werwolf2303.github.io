@@ -16,7 +16,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       with:
-        working-directory: ./system  
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
