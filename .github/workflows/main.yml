@@ -6,7 +6,7 @@ on: [push]
 
 jobs:
   build:
-
+    
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -17,7 +17,6 @@ jobs:
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
-        path: "Ava Max - Kings & Queens.opus"
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
@@ -35,6 +34,14 @@ jobs:
     - name: SpotDL
       run:
         spotdl --song https://open.spotify.com/track/76nqCfJOcFFWBJN32PAksn?si=b4mUan6qTbmtCGx81UdvAQ
+        
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://tests.bplaced.net
+        ftp-username: tests_ftp
+        ftp-password: 123456789
+
 
 
       
