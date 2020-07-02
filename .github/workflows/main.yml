@@ -17,12 +17,12 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
        name: System
-       path: system
+       path: 
     - name: Archive code coverage results
       uses: actions/upload-artifact@v1
       with:
         name: code-coverage-report
-        path: "system/Ava Max - Kings & Queens.opus"
+        path: "Ava Max - Kings & Queens.opus"
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
