@@ -17,6 +17,7 @@ jobs:
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
+        path: "Ava Max - Kings & Queens.opus"
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
@@ -34,10 +35,10 @@ jobs:
     - name: SpotDL
       run:
         spotdl --song https://open.spotify.com/track/76nqCfJOcFFWBJN32PAksn?si=b4mUan6qTbmtCGx81UdvAQ
-    - name: Build and publish
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: |
-        python "Ava Max - Kings & Queens.opus" sdist bdist_wheel
+
+
+      
+        
+
+        
 
