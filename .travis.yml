@@ -3,12 +3,11 @@ rvm:
   - 2.0.0
 env:
   global:
-  - USER="username"
-  - EMAIL="username@mail.com"
-  - REPO="name of target repo"
-  - FILES="README.md foo.txt bar.txt"
-  - GH_REPO="github.com/${USER}/${REPO}.git"
-  - secure: "put travis gem output here => http://docs.travis-ci.com/user/encryption-keys/"
+  - USER="werwolf2303"
+  - EMAIL="gianlucabeil@outlook.de"
+  - REPO="werwolf2303.github.io"
+  - FILES="README.md"
+  - GH_REPO="github.com/werwolf2303/werwolf2303.github.io.git"
 script:
   - ruby test.rb
 after_success:
