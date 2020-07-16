@@ -3,13 +3,11 @@ rvm:
   - 2.0.0
 env:
   global:
-  - USER="werwolf2303"
+  - USER="Werwolf2303"
   - EMAIL="gianlucabeil@outlook.de"
   - REPO="werwolf2303.github.io"
   - FILES="README.md"
   - GH_REPO="github.com/werwolf2303/werwolf2303.github.io.git"
-script:
-  - ruby test.rb
 after_success:
   - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
   - git clone git://${GH_REPO}
