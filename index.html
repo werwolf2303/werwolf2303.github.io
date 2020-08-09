@@ -1,69 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Werwolf2303 - Startseite</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="ht.js"></script>
+    <meta charset="UTF-8">
+    <title>Werwolf2303 - Startseite</title>
 </head>
-
-<body>
-
-  <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Werwolf2303 </div>
-      <div class="list-group list-group-flush">
-	  <iframe src="secure.html" width="150" height="120"></iframe>
-        <a href="#projekte" class="list-group-item list-group-item-action bg-light">Projekte</a>
-        <a href="#server" class="list-group-item list-group-item-action bg-light">Server</a>
-        <a href="dienste.html" class="list-group-item list-group-item-action bg-light">Dienste</a>
-        <a href="" style="color:grey" class="list-group-item list-group-item-action bg-light">//</a>
-        <a href="" style="color:grey" class="list-group-item list-group-item-action bg-light">//</a>
-        <a href="" style="color:red" class="list-group-item list-group-item-action bg-light">BETA</a>
-      </div>
+<body id="page" onload="onLoad()">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Werwolf2303</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Startseite <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="proj.html">Projekte</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="serv.html">Server</a>
+            </li>
+        </ul>
+        <span class="navbar-text">
+      Hosted by Github
+    </span>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-
-      <div class="container-fluid">
-        <h1 class="mt-4">Startseite</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-	  </div>
+</nav>
+<noscript>
+<a style="color:red">Dein Browser unterst&uuml;tzt kein JavaScript! Es wird zu Darstellungsfehlern kommen</a>
+</noscript>
+<div id="load" style="position:fixed;top:40%;left:50%">
+<div class="spinner-border text-danger" role="status">
+    <span class="sr-only">Loading...</span>
+</div>
+    <br>
+    <center>
+    <a style="position:fixed;top:46%;left:49%">Bitte warten</a>
+    </center>
+</div>
+<center>
+<br>
+<br>
+<br>
+    <div style="width:60%" class="jumbotron">
+        <h1 class="display-4">Projektseite</h1>
+        <p class="lead">von Werwolf2303</p>
+        <hr class="my-4">
+        <p>Hallo du bist auf meiner Projektseite gelandet, hier findest du allerlei Projekte von mir.</p>
+        <p class="lead">
+            <a class="btn btn-dark btn-lg" href="#" role="button">Zu <span style="color:slategrey">GitHub</span></a>
+        </p>
     </div>
-    <!-- /#page-content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
+    <div style="width:40%" class="card">
+        <h5 class="card-header">Hinweis</h5>
+        <div class="card-body">
+            <h5 class="card-title">Alte Projektseite</h5>
+            <p class="card-text">Ich habe ein Backup von der alten Projektseite erstellt</p>
+            <a href="bak/index.html" class="btn btn-primary">Zur Alten Projektseite</a>
+        </div>
+    </div>
+    <br>
+        <div id="vis" class="toast" data-autohide="false">
+            <div class="toast-header">
+                <strong style="color:red" class="mr-auto">Information</strong>
+                <small></small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                Zurzeit entwickle ich keine neuen Projekte
+            </div>
+        </div>
+</center>
 <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
-
+    $(".toast").toast('show');
+</script>
 </body>
-
 </html>

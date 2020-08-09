@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="ht.js"></script>
+    <meta charset="UTF-8">
+    <title>Werwolf2303 - Projekte</title>
+</head>
+<body id="page" onload="onLoad()">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Werwolf2303</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Startseite</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="proj.html">Projekte <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="serv.html">Server</a>
+            </li>
+        </ul>
+        <span class="navbar-text">
+      Hosted by Github
+    </span>
+    </div>
+</nav>
+<noscript>
+    <a style="color:red">Dein Browser unterst&uuml;tzt kein JavaScript! Es wird zu Darstellungsfehlern kommen</a>
+</noscript>
+<div id="load" style="position:fixed;top:40%;left:50%">
+    <div class="spinner-border text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <br>
+    <center>
+        <a style="position:fixed;top:46%;left:49%">Bitte warten</a>
+    </center>
+</div>
+<center>
+    <br>
+    <h3>Projekte</h3>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div onmouseleave="drei()" data-toggle="popover" title="Click to open URL" data-content="Default popover" onclick="window.open('https://github.com/werwolf2303/UndoIDE')" onmouseover="one()" id="eins" class="card col-sm" style="width: 18rem">
+                <img src="1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Undo IDE</h5>
+                    <p class="card-text">Ein HTML Editor geschrieben in Java</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="https://github.com/werwolf2303/UndoIDE" class="btn btn-primary">Zum Projekt</a>
+                </div>
+            </div>
+            <div data-toggle="popover" title="Click to open URL" data-content="Default popover" id="zwei" onmouseleave="vier()" onclick="window.open('https://github.com/werwolf2303/HARDWARE-Management')" onmouseover="two()" class="card col-sm" style="width: 18rem">
+                <img src="2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Hardware Management</h5>
+                    <p class="card-text">Hardware Management ist ein Tool mit dem du dein System unter die Lupe nehmen kannst</p>
+                    <a href="https://github.com/werwolf2303/HARDWARE-Management" class="btn btn-primary">Zum Projekt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+<script>
+    function one() {
+        document.getElementById("eins").style.borderColor = "blue";
+    }
+    function two() {
+        document.getElementById("zwei").style.borderColor = "blue";
+
+    }
+    function drei() {
+        document.getElementById("eins").style.borderColor = "lightgrey";
+    }
+    function vier() {
+        document.getElementById("zwei").style.borderColor = "lightgrey";
+    }
+</script>
+<br>
+</body>
+</html>
