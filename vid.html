@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <script src="glm-ajax.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Werwolf2303 - Video Player</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="ht.js"></script>
-    <meta charset="UTF-8">
-    <title>Werwolf2303 - Server</title>
+    <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body id="page" onload="onLoad()">
+<body id="page">
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="index.html">Werwolf2303</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,12 +27,12 @@
                 <a class="nav-link" href="proj.html">Projekte</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Tools
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="aud.html">Audio Player</a>
-                    <a class="dropdown-item" href="vid.html">Video Player</a>
+                    <a class="dropdown-item active" href="vid.html">Video Player</a>
                 </div>
             </li>
         </ul>
@@ -40,31 +41,38 @@
     </span>
     </div>
 </nav>
-<noscript>
-    <a style="color:red">Dein Browser unterst&uuml;tzt kein JavaScript! Es wird zu Darstellungsfehlern kommen</a>
-</noscript>
-<div id="load" style="position:fixed;top:40%;left:50%">
-    <div class="spinner-border text-danger" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-    <br>
-    <center>
-        <a style="position:fixed;top:46%;left:49%">Bitte warten</a>
-    </center>
-</div>
 <center>
-<div data-toggle="popover" title="Click to open Server URL" data-content="Default popover" onclick="window.open('https://github.com/werwolf2303/UndoIDE')" id="eins" class="card col-sm" style="width: 18rem">
-    <div class="card-body">
-        <h5 class="card-title">Server1</h5>
-        <p id="resu" class="card-text"></p>
-        <a href="https://github.com/werwolf2303/UndoIDE" class="btn btn-primary">&Ouml;ffne Server URL</a>
-    </div>
-    <script>
-        window.location.href="index.html";
-        var res = ping("https://www.google.de")
-        document.getElementById("resu").innerHTML = res;
-    </script>
-</div>
+    <br>
+    <br>
+<h1>Video Player</h1>
+    <br>
+        <input type="file" accept="video/*">
+<br>
+<br>
+<br>
+    <video autoplay controls width="50%" height="40%">
+    </video>
 </center>
+<script>
+    (function localFileVideoPlayer() {
+	'use strict'
+  var URL = window.URL || window.webkitURL
+  var displayMessage = function (message, isError) {
+    element.className = isError ? 'error' : 'info'
+  }
+  var playSelectedFile = function (event) {
+    var file = this.files[0]
+    var type = file.type
+    var videoNode = document.querySelector('video')
+    var canPlay = videoNode.canPlayType(type)
+
+    var fileURL = URL.createObjectURL(file)
+    videoNode.src = fileURL
+  }
+  var inputNode = document.querySelector('input')
+  inputNode.addEventListener('change', playSelectedFile, false)
+})()
+</script>
+
 </body>
 </html>

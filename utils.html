@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Werwolf2303 - Tools</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="ht.js"></script>
-    <meta charset="UTF-8">
-    <title>Werwolf2303 - Startseite</title>
 </head>
 <body id="page" onload="onLoad()">
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
@@ -40,54 +38,30 @@
     </div>
 </nav>
 <noscript>
-<a style="color:red">Dein Browser unterst&uuml;tzt kein JavaScript! Es wird zu Darstellungsfehlern kommen</a>
+    <a style="color:red">Dein Browser unterst&uuml;tzt kein JavaScript! Es wird zu Darstellungsfehlern kommen</a>
 </noscript>
 <div id="load" style="position:fixed;top:40%;left:50%">
-<div class="spinner-border text-danger" role="status">
-    <span class="sr-only">Loading...</span>
-</div>
+    <div class="spinner-border text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
     <br>
     <center>
-    <a style="position:fixed;top:46%;left:49%">Bitte warten</a>
+        <a style="position:fixed;top:46%;left:49%">Bitte warten</a>
     </center>
 </div>
 <center>
-<br>
-<br>
-<br>
-    <div style="width:60%" class="jumbotron">
-        <h1 class="display-4">Projektseite</h1>
-        <p class="lead">von Werwolf2303</p>
-        <hr class="my-4">
-        <p>Hallo du bist auf meiner Projektseite gelandet, hier findest du allerlei Projekte von mir.</p>
-        <p class="lead">
-            <a class="btn btn-dark btn-lg" href="#" role="button">Zu <span style="color:slategrey">GitHub</span></a>
-        </p>
-    </div>
-    <div style="width:40%" class="card">
-        <h5 class="card-header">Hinweis</h5>
+    <div data-toggle="popover" title="Click to open Server URL" data-content="Default popover" onclick="window.open('https://github.com/werwolf2303/UndoIDE')" id="eins" class="card col-sm" style="width: 18rem">
         <div class="card-body">
-            <h5 class="card-title">Alte Projektseite</h5>
-            <p class="card-text">Ich habe ein Backup von der alten Projektseite erstellt</p>
-            <a href="bak/index.html" class="btn btn-primary">Zur Alten Projektseite</a>
+            <h5 class="card-title">Server1</h5>
+            <p id="resu" class="card-text"></p>
+            <a href="https://github.com/werwolf2303/UndoIDE" class="btn btn-primary">&Ouml;ffne Server URL</a>
         </div>
+        <script>
+        window.location.href="index.html";
+        var res = ping("https://www.google.de")
+        document.getElementById("resu").innerHTML = res;
+    </script>
     </div>
-    <br>
-        <div id="vis" class="toast" data-autohide="false">
-            <div class="toast-header">
-                <strong style="color:red" class="mr-auto">Information</strong>
-                <small></small>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="toast-body">
-                Zurzeit entwickle ich keine neuen Projekte
-            </div>
-        </div>
 </center>
-<script>
-    $(".toast").toast('show');
-</script>
 </body>
 </html>
