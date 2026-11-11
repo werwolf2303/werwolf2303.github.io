@@ -1,0 +1,55 @@
+name: GitHub-Profile-Summary-Cards
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # every day at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  generate-cards:
+    name: generate-github-profile-summary-cards
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push the generated images
+    steps:
+      - uses: actions/checkout@v4
+      - uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          # Optional PAT (SUMMARY_GITHUB_TOKEN) includes private contributions; falls back to the default token
+          GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: master
+          TIME_ZONE: Europe/Berlin
+          AUTO_PUSH: true
+
+  keep-scheduled-workflow-activity:
+    name: keep-scheduled-workflow-activity
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write # needed to re-enable the schedule
+    steps:
+      - uses: WaterLemons2k/scheduled-workflow-activity-action@v2
+
+  generate-snake:
+    name: generate-snake-game
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push the generated files to snake-grid/ on master (served by GitHub Pages)
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: master
+          target_path: snake-grid
+          build_dir: dist
+          keep_history: true
+          jekyll: true # don't add a .nojekyll file to the site root
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
