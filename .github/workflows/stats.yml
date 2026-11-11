@@ -51,14 +51,14 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: master
-          target_path: snake-grid
-          build_dir: dist
-          keep_history: true
-          jekyll: true # don't add a .nojekyll file to the site root
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            snake-grid/github-snake.svg
+            snake-grid/github-snake-dark.svg?palette=github-dark
+      - name: Commit and push snake
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add snake-grid
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Update snake grid"
+          git pull --rebase origin master
+          git push origin HEAD:master
